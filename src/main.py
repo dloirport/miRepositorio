@@ -2,6 +2,7 @@
 # To change this license header, choose License Headers in Project Properties.
 # To change this template file, choose Tools | Templates
 # and open the template in the editor.
+# -*- coding: utf-8 -*-
 
 from gi.repository import Gtk
 
@@ -61,6 +62,9 @@ class main:
         self.entPrecio = b.get_object("entPrecio")
         self.trewVentas = b.get_object("trewVentas")
         self.listaVentas = b.get_object("listVentas")
+        self.menubar = b.get_object("menubar")
+         
+        
         self.ventanaPrincipal.show()
         clientes.mostrar(self.listCliente, self.trewCliente)
         
@@ -86,12 +90,16 @@ class main:
             "on_btnSalirven_clicked": self.on_btnSalirven_clicked,
             "on_ventanaVentas_destroy": self.on_ventanaVentas_destroy,
             "on_btnSalirven_delete_event": self.on_btnSalirven_delete_event,
-            "on_btnGrabarven_clicked": self.on_btnGrabarven_clicked
+            "on_btnGrabarven_clicked": self.on_btnGrabarven_clicked,
+            "on_imagemenuitem5_activate": self.on_imagemenuitem5_activate
             }
 
         b.connect_signals(dic)
 
 #declaracion y codificacion de funciones
+    def on_imagemenuitem5_activate(self, widget):
+        Gtk.main_quit()
+
     def on_btnGrabarven_clicked(self, widget, Data=None):
         self.Conce = self.entConce.get_text()
         self.Precio = self.entPrecio.get_text()

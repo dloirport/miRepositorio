@@ -119,6 +119,7 @@
                             <property name="can_focus">False</property>
                             <property name="use_underline">True</property>
                             <property name="use_stock">True</property>
+                            <signal name="activate" handler="on_imagemenuitem5_activate" swapped="no"/>
                           </object>
                         </child>
                       </object>
@@ -324,13 +325,13 @@
                 <property name="height_request">480</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="margin_left">2</property>
-                <property name="margin_right">2</property>
-                <property name="margin_top">11</property>
-                <property name="margin_bottom">2</property>
-                <property name="label_xalign">0.10000000149011612</property>
-                <property name="label_yalign">0.89999997615814209</property>
-                <property name="shadow_type">none</property>
+                <property name="margin_left">5</property>
+                <property name="margin_right">5</property>
+                <property name="margin_top">5</property>
+                <property name="margin_bottom">5</property>
+                <property name="label_xalign">0.20000000298023224</property>
+                <property name="label_yalign">1</property>
+                <property name="shadow_type">in</property>
                 <child>
                   <object class="GtkAlignment" id="alignment1">
                     <property name="visible">True</property>
@@ -411,6 +412,11 @@
                     <property name="can_focus">False</property>
                     <property name="margin_left">5</property>
                     <property name="label" translatable="yes">Clientes</property>
+                    <attributes>
+                      <attribute name="font-desc" value="Bitstream Charter Bold 12"/>
+                      <attribute name="weight" value="semibold"/>
+                      <attribute name="foreground" value="#a4a400000000"/>
+                    </attributes>
                   </object>
                 </child>
               </object>
@@ -823,6 +829,7 @@
                 <property name="margin_left">15</property>
                 <property name="margin_top">10</property>
                 <property name="margin_bottom">10</property>
+                <property name="relief">none</property>
                 <property name="xalign">0.55000001192092896</property>
                 <property name="yalign">0.41999998688697815</property>
                 <signal name="clicked" handler="on_btnSalircli_clicked" swapped="no"/>
@@ -1247,13 +1254,18 @@
                 <property name="margin_right">10</property>
                 <property name="margin_top">10</property>
                 <property name="margin_bottom">10</property>
+                <property name="hexpand">True</property>
+                <property name="hscroll_policy">natural</property>
+                <property name="vscroll_policy">natural</property>
                 <property name="model">listFactura</property>
+                <property name="enable_grid_lines">both</property>
                 <signal name="cursor-changed" handler="on_trewFactura_cursor_changed" swapped="no"/>
                 <child internal-child="selection">
                   <object class="GtkTreeSelection" id="treeview-selection2"/>
                 </child>
                 <child>
                   <object class="GtkTreeViewColumn" id="treeviewcolumn5">
+                    <property name="resizable">True</property>
                     <property name="title" translatable="yes">NumFactura</property>
                     <child>
                       <object class="GtkCellRendererText" id="cellrenderertext5"/>
@@ -1602,6 +1614,7 @@
                 <property name="margin_right">8</property>
                 <property name="margin_top">8</property>
                 <property name="margin_bottom">8</property>
+                <property name="hexpand">True</property>
                 <property name="model">listVentas</property>
                 <property name="enable_grid_lines">both</property>
                 <child internal-child="selection">
