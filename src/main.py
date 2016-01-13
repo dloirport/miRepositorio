@@ -155,7 +155,7 @@ class main:
         self.matrifac = self.entMatrifac.get_text()
         self.matrifac.upper()
         self.marcafac = self.entMarcafac.get_text()
-        self.marca.capitalize()
+        self.marcafac.capitalize()
         self.modelfac = self.entModelfac.get_text()
         self.modelfac.capitalize()
         self.fechafac = self.entFechafac.get_text()
