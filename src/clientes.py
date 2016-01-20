@@ -11,9 +11,9 @@ from conexion import bd
 # control de dni
 
 
-def Grabarcli(dni, apel, nom, dir, loc, pro, cp, mov, tel, mail, no):
+def Grabarcli(dni, apel, nom, dir, loc, cmbProv, cp, mov, tel, mail, no):
     cursor = bd.cursor()
-    registro = (dni, apel, nom, dir, loc, pro, cp, mov, tel, mail, no)
+    registro = (dni, apel, nom, dir, loc, cmbProv, cp, mov, tel, mail, no)
     if dni != "" and  apel != "":
         cursor.executemany("""INSERT INTO clientes(dnicli,apelcli,nomcli,dircli,poblic,procli,cpcli,movcli,telcli,mailcli,pubcli) VALUES (?,?,?,?,?,?,?,?,?,?,?);""", (registro,))
         bd.commit()
@@ -26,7 +26,6 @@ def limpiarcli(dni, apel, nom, dir, loc, pro, cp, mov, tel, mail):
     dir.set_text("")
     nom.set_text("")
     loc.set_text("")
-    pro.set_text("")
     cp.set_text("")
     mov.set_text("")
     tel.set_text("")
@@ -66,4 +65,6 @@ def Borrarcli(dni):
     cursor.execute(""" DELETE FROM clientes WHERE dnicli=? """, (dni,))
     bd.commit()
     
+        
+
     
